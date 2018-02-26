@@ -1,0 +1,92 @@
+@font-face {
+  font-family: 'nanum';
+  font-style: normal;
+  font-weight: normal;
+  src: url('/font/nanum.eot'); 
+  src: local('¡Ø'), url('/font/nanum.woff') format('woff'), url('/font/nanum.ttf') format('truetype'); 
+}
+
+@font-face {
+  font-family: 'nanumB';
+  font-style: normal;
+  font-weight: normal;
+  src: url('/font/nanumB.eot'); 
+  src: local('¡Ø'), url('/font/nanumB.woff') format('woff'), url('/font/nanumB.ttf') format('truetype'); 
+}
+
+body { font-size: 0; margin: 0; padding: 0; font-family: 'nanumB'; position: relative; }
+article { width: 100%; height: 100%; position: fixed; top: 0; left: 0; z-index: 1; }
+footer { width: 100%; position: fixed; bottom: 0; z-index: 2; }
+ul { list-style: none; margin: 0; padding: 0; }
+li { display: inline-block; cursor: pointer; text-align: center; }
+textarea, input, select { font-family: 'nanumB'; font-size: 16px; }
+form { display: initial; }
+a { text-decoration: none; }
+
+.background { width: 100%; height: 100%; position: fixed; background-image: url('/img/main/background2.jpg'); background-size: 100% 100%; background-position: center center; }
+
+.startBarBack { width: 100%; height: 56px; position: fixed; bottom: 0; background-color: black; opacity: 0.6; }
+.startBar { width: 100%; position: fixed; bottom: 0; }
+.startBar .startBtn { display: inline-block; padding: 16px 20px; vertical-align: middle; position: relative; }
+.startBar .startBtn img { width: 24px; height: 24px; }
+.startBar .startBtn .startBack { padding: 27px 32px; background-color: white; opacity: 0.2; position: absolute; top: 0; left: 0; display: none; }
+.startBar .shortCut { width: calc(100% - 300px); display: inline-block; }
+.startBar .shortCut .icon { display: inline-block; padding: 16px 20px; position: relative; vertical-align: middle; cursor: default; }
+.startBar .shortCut .icon img { width: 24px; height: 24px; }
+.startBar .shortCut .icon .shortBack { padding: 28px 32px; background-color: white; opacity: 0.2; position: absolute; top: 0; left: 0; display: none; }
+.startBar .shortCut .icon .shortBack2 { padding: 28px 17px; }
+.startBar .shortCut .icon .shortBack3 { padding: 28px 78px; }
+.startBar .shortCut .icon .shortBack4 { padding: 28px 22px; }
+.startBar .shortCut .icon .footerLine { width: 54px; height: 3px; position: absolute; bottom: 0; left: 50%; transform: translatex(-50%); background-image: url('/img/footer/footerLine.png'); background-size: 100% 100%; background-position: center center; display: none; }
+.startBar .timeBar { width: 236px; }
+.startBar .timeBar .icon { padding: 10px; }
+.startBar .timeBar .icon2 { width: 36px; padding: 19px 0; }
+.startBar .timeBar .icon3 { padding: 16px 10px; }
+.startBar .timeBar .icon .txt { font-size: 14px; color: white; text-align: center; }
+.startBar .timeBar .time { width: 136px; }
+
+.icons { width: 80px; display: inline-block; position: relative; margin: 5px; padding: 2px 0; cursor: default; }
+.icons .iconsBack { width: 80px; height: 74px; position: absolute; top: 0; left: 0; background-color: #cacaca; border: 2px solid white; opacity: 0.2; display: none; }
+.icons .img { width: 80px; height: 50px; text-align: center; }
+.icons .img img { width: 37px; height: 45px; }
+.icons .txt { width: 80px; font-size: 14px; color: white; text-align: center; padding: 1px 0; }
+
+.folder { width: 700px; height: 500px; position: absolute; top: 20%; left: 30%; transform: translate3d(-30%, -20%, 0); z-index: 3; background-color: white; border: 1px solid #d1d1d1; }
+.folder .menu_wrap { width: 100%; border-bottom: 1px solid #d1d1d1; }
+.folder .menu_wrap .menu { width: 60px; display: inline-block; padding: 5px 0; font-size: 14px; text-align: center; cursor: default; }
+.folder .menu_wrap .menu:first-child { background-color: #0077ff; color: white; }
+.folder .menu_wrap .title { font-size: 14px; display: inline-block; padding: 5px 0; margin-left: 50px; }
+.folder .menu_wrap .btn_wrap { float: right; }
+.folder .menu_wrap .btn_wrap .btn { width: 50px; height: 28px; line-height: 2; display: inline-block; vertical-align: middle; text-align: center; font-size: 14px; cursor: default; color: #b1b1b1; }
+.folder .menu_wrap .btn_wrap .btn:hover { color: black; background-color: #ededed; }
+.folder .menu_wrap .btn_wrap .btn:last-child:hover { color: white; background-color: red; }
+.folder .menu_wrap .btn_wrap .btnBack { width: 50px; }
+.folder .quick_menu { width: 200px; height: 432px; display: inline-block; border-right: 1px solid #efefef; vertical-align: top; margin: 10px 0; }
+.folder .quick_menu .menu { width: 100%; padding: 5px 0 5px 50px; }
+.folder .quick_menu .menu img { width: 18px; height: 20px; vertical-align: middle; cursor: pointer; }
+.folder .quick_menu .menu .txt { font-size: 14px; display: inline-block; cursor: pointer; padding-left: 5px; vertical-align: middle; }
+.folder .content_wrap { width: 459px; height: 432px; display: inline-block; vertical-align: top; margin: 10px 0; padding: 0 20px; }
+.folder .content_wrap .folder_icon { width: 110px; height: 60px; display: inline-block; position: relative; padding: 5px 0; cursor: default; }
+.folder .content_wrap .folder_icon .folder_iconBack { width: 110px; height: 70px; position: absolute; top: 0; left: 0; background-color: #77bbff; opacity: 0.2; display: none; }
+.folder .content_wrap .folder_icon .img { width: 110px; height: 40px; text-align: center; }
+.folder .content_wrap .folder_icon .img img { width: 50px; height: 40px; }
+.folder .content_wrap .folder_icon .txt { width: 110px; font-size: 14px; text-align: center; padding: 1px 0; }
+
+.folder .count_wrap { padding: 2px 0 2px 10px; }
+.folder .count_wrap .txt { font-size: 12px; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
