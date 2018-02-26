@@ -7,7 +7,7 @@
 		<div class="menu sel" onclick="folderMenuClick('file')" id="folderMenu_file">파일</div>
 		<div class="menu" onmouseenter="folderMenu('view')" onmouseleave="folderMenu2('view')"
 				onclick="folderMenuClick('view')" id="folderMenu_view">보기</div>
-		<div class="title">${folderName }</div>
+		<div class="title">${title }</div>
 		<div class="btn_wrap">
 			<div class="btn">ㅡ</div>
 			<div class="btn">□</div>
@@ -16,11 +16,11 @@
 	</div>
 	<div class="quick_menu">
 		<div class="menu">
-			<img src="/img/doc/pc.png"/>
+			<img src="/img/doc/menu/pc.png"/>
 			<div class="txt">내 PC</div>
 		</div>
 		<div class="menu">
-			<img src="/img/doc/doc.png"/>
+			<img src="/img/doc/menu/doc.png"/>
 			<div class="txt">내 문서</div>
 		</div>
 	</div>
