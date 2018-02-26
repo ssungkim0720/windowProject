@@ -201,7 +201,7 @@ function folderIcon2(name){
 }
 
 // 폴더 아이콘 클릭
-var folderIcons = new Array(0, 0);
+var folderIcons = new Array(0, 0, 0, 0);
 function folderIconClick(name){
 	$(".folder_iconBack").hide();
 	$(".folder_iconBack").css({
@@ -227,6 +227,12 @@ function folderIconNumCheck(name){
 		break;
 	case "pc":
 		n = 1;
+		break;
+	case "pc2":
+		n = 2;
+		break;
+	case "pc3":
+		n = 3;
 		break;
 	}
 	return n;

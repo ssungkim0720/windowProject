@@ -39,6 +39,20 @@
 			</div>
 			<div class="txt">내 PC</div>
 		</div>
+		<div class="folder_icon" onmouseenter="folderIcon('pc2')" onmouseleave="folderIcon2('pc2')" onclick="folderIconClick('pc2')">
+			<div class="folder_iconBack" id="pc2FolderIconBack"></div>
+			<div class="img">
+				<img src="/img/main/pc.png"/>
+			</div>
+			<div class="txt">내 PC</div>
+		</div>
+		<div class="folder_icon" onmouseenter="folderIcon('pc3')" onmouseleave="folderIcon2('pc3')" onclick="folderIconClick('pc3')">
+			<div class="folder_iconBack" id="pc3FolderIconBack"></div>
+			<div class="img">
+				<img src="/img/main/pc.png"/>
+			</div>
+			<div class="txt">내 PC</div>
+		</div>
 	</div>
 	<div class="count_wrap">
 		<div class="txt">2개 항목</div>
