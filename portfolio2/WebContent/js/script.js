@@ -395,6 +395,11 @@ function saveNotepad(){
 
 // 메모장 보기
 function viewNotepad(num){
+	$("#notepadFile").css({
+		"background-color" : "white"
+	});
+	$("#notepadTopmenu").hide();
+	notepadMenuNum = 0;
 	$.ajax({
 		type : "post",
 		url : "/notepad/view/"+num,
@@ -448,6 +453,11 @@ function removeNotepad(num){
 
 // 메모장 목록으로
 function notepadList(){
+	$("#notepadFile").css({
+		"background-color" : "white"
+	});
+	$("#notepadTopmenu").hide();
+	notepadMenuNum = 0;
 	$.ajax({
 		type : "post",
 		url : "/notepad/writeCancel",
