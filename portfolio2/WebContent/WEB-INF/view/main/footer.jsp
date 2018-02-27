@@ -10,12 +10,12 @@
 	</div>
 	<div class="shortCut">
 		<div class="icon" onmouseenter="shortCut(1)" onmouseleave="shortCut2(1)" onclick="shortCutClick(1)">
-			<img src="/img/footer/folder.png"/>
+			<img src="/img/pc/menu/pc.png"/>
 			<div class="shortBack" id="shortBack1"></div>
 			<div class="footerLine" id="footerLine1"></div>
 		</div>
 		<div class="icon" onmouseenter="shortCut(2)" onmouseleave="shortCut2(2)" onclick="shortCutClick(2)">
-			<img src="/img/footer/chrome.png"/>
+			<img src="/img/footer/folder.png"/>
 			<div class="shortBack" id="shortBack2"></div>
 			<div class="footerLine" id="footerLine2"></div>
 		</div>

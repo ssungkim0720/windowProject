@@ -34,10 +34,66 @@ function shortCut2(num){
 // 시작메뉴 아이콘 클릭
 var shortCutIcon = new Array(0, 0, 0, 0);
 function shortCutClick(num){
-	if(shortCutIcon[num] == 0){
-		$("#footerLine"+num).show();
-		shortCutIcon[num] == 1;
+	$(".viewChange").css({
+		"z-index" : 3
+	});
+	var b = false;
+	switch(name){
+	case "pc":
+		b = pcView == 0 ? true : false;
+		break;
+	case "doc":
+		b = docView == 0 ? true : false;
+		break;
+	case "note":
+		b = noteView == 0 ? true : false;
 	}
+	if(b){
+		$.ajax({
+			type : "post",
+			url : "/folder/"+name,
+			async : false,
+			success : function(html){
+				$("article").append(html);
+				var num = 0;
+				switch(name){
+				case "pc":
+					num = 1;
+					pcView = 1;
+					break;
+				case "doc":
+					num = 2;
+					docView = 1;
+					break;
+				case "note":
+					num = 3;
+					noteView = 1;
+					break;
+				}
+				if(shortCutIcon[num] == 0){
+					$("#footerLine"+num).show();
+					shortCutIcon[num] == 1;
+				}
+			}
+		});
+	} else {
+		viewChange(name);
+	}
+//	if(shortCutIcon[num] == 0){
+//		$("#footerLine"+num).show();
+//		shortCutIcon[num] == 1;
+//		switch(num){
+//		case 1:
+//			icondbClick("pc");
+//			break;
+//		case 2:
+//			icondbClick("doc");
+//			break;
+//		case 3:
+//			icondbClick("note");
+//			break;
+//		}
+//	}
 }
 
 $(document).ready(function(){
@@ -134,52 +190,92 @@ function iconClick(name){
 }
 
 // 아이콘 더블클릭
+var pcView = 0;
+var docView = 0;
+var noteView = 0;
 function icondbClick(name){
 	$(".viewChange").css({
 		"z-index" : 3
 	});
-	$.ajax({
-		type : "post",
-		url : "/folder/"+name,
-		async : false,
-		success : function(html){
-			$("article").append(html);
-		}
-	});
+	var b = false;
+	switch(name){
+	case "pc":
+		b = pcView == 0 ? true : false;
+		break;
+	case "doc":
+		b = docView == 0 ? true : false;
+		break;
+	case "note":
+		b = noteView == 0 ? true : false;
+	}
+	if(b){
+		$.ajax({
+			type : "post",
+			url : "/folder/"+name,
+			async : false,
+			success : function(html){
+				$("article").append(html);
+				var num = 0;
+				switch(name){
+				case "pc":
+					num = 1;
+					pcView = 1;
+					break;
+				case "doc":
+					num = 2;
+					docView = 1;
+					break;
+				case "note":
+					num = 3;
+					noteView = 1;
+					break;
+				}
+				if(shortCutIcon[num] == 0){
+					$("#footerLine"+num).show();
+					shortCutIcon[num] == 1;
+				}
+			}
+		});
+	} else {
+		viewChange(name);
+	}
 }
 
-// 폴더 닫기
-function closeFolder(name){
-	$("#"+name+"Folder").remove();
+// 내PC 닫기
+function closePc(name){
+	$("#pc").remove();
+	$("#footerLine1").hide();
+	shortCutIcon[1] == 0;
+	pcView = 0;
 }
 
-// 폴더 메뉴 접근
-function folderMenu(name){
-	$("#folderMenu_"+name).css({
+// PC 메뉴 접근
+function pcMenu(name){
+	$("#pcMenu_"+name).css({
 		"background-color" : "f5f5f5"
 	});
 }
 
-// 폴더 메뉴 리브
-function folderMenu2(name){
-	$("#folderMenu_"+name).css({
+// PC 메뉴 리브
+function pcMenu2(name){
+	$("#pcMenu_"+name).css({
 		"background-color" : "white"
 	});
 }
 
-// 폴더 메뉴 클릭
-var folderMenus = new Array(0, 0);
-function folderMenuClick(name){
+// PC 메뉴 클릭
+var pcMenus = new Array(0, 0);
+function pcMenuClick(name){
 	switch(name){
 	case "file":
 		break;
 	case "view":
-		if(folderMenus[1] == 0){
-			$("#folderMenu_"+name).css({
+		if(pcMenus[1] == 0){
+			$("#pcMenu_"+name).css({
 				"background-color" : "e5e5e5"
 			});
 		} else {
-			$("#folderMenu_"+name).css({
+			$("#pcMenu_"+name).css({
 				"background-color" : "f5f5f5"
 			});
 		}
@@ -187,42 +283,42 @@ function folderMenuClick(name){
 	}
 }
 
-// 폴더 아이콘 접근
-function folderIcon(name){
-	var n = folderIconNumCheck(name);
-	if(folderIcons[n] == 0){
-		$("#"+name+"FolderIconBack").show();
+// PC 아이콘 접근
+function pcIcon(name){
+	var n = pcIconNumCheck(name);
+	if(pcIcons[n] == 0){
+		$("#"+name+"PcIconBack").show();
 	}
 }
 
-// 폴더 아이콘 리브
-function folderIcon2(name){
-	var n = folderIconNumCheck(name);
-	if(folderIcons[n] == 0){
-		$("#"+name+"FolderIconBack").hide();
+// PC 아이콘 리브
+function pcIcon2(name){
+	var n = pcIconNumCheck(name);
+	if(pcIcons[n] == 0){
+		$("#"+name+"PcIconBack").hide();
 	}
 }
 
-// 폴더 아이콘 클릭
-var folderIcons = new Array(0, 0, 0, 0);
-function folderIconClick(name){
+// PC 아이콘 클릭
+var pcIcons = new Array(0, 0);
+function pcIconClick(name){
 	$(".folder_iconBack").hide();
 	$(".folder_iconBack").css({
 		"background-color" : "77bbff"
 	});
-	var n = folderIconNumCheck(name);
-	for(var i=0; i<folderIcons.length; i++){
-		folderIcons[i] = 0;
+	var n = pcIconNumCheck(name);
+	for(var i=0; i<pcIcons.length; i++){
+		pcIcons[i] = 0;
 	}
-	folderIcons[n] = 1;
-	$("#"+name+"FolderIconBack").css({
+	pcIcons[n] = 1;
+	$("#"+name+"PcIconBack").css({
 		"background-color" : "#0077ff"
 	});
-	$("#"+name+"FolderIconBack").show();
+	$("#"+name+"PcIconBack").show();
 }
 
-// 폴더 아이콘 배열 번호 체크
-function folderIconNumCheck(name){
+// PC 아이콘 배열 번호 체크
+function pcIconNumCheck(name){
 	var n = 0;
 	switch(name){
 	case "chrome":
@@ -230,12 +326,6 @@ function folderIconNumCheck(name){
 		break;
 	case "pc":
 		n = 1;
-		break;
-	case "pc2":
-		n = 2;
-		break;
-	case "pc3":
-		n = 3;
 		break;
 	}
 	return n;
@@ -260,6 +350,9 @@ function viewChange(view){
 function closeNotepad(){
 	$("#notePad").remove();
 	notepadMenuNum = 0;
+	$("#footerLine3").hide();
+	shortCutIcon[3] == 0;
+	noteView = 0;
 }
 
 // 메모장 메뉴 접근
@@ -330,6 +423,11 @@ function newNotepad(){
 function notepadWriteCancel(){
 	var b = confirm("저장하지 않은 내용은 손실됩니다.\n계속하시겠습니까?");
 	if(b){
+		$("#notepadFile").css({
+			"background-color" : "white"
+		});
+		$("#notepadTopmenu").hide();
+		notepadMenuNum = 0;
 		$.ajax({
 			type : "post",
 			url : "/notepad/writeCancel",

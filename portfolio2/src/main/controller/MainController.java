@@ -34,11 +34,11 @@ public class MainController {
 		switch(name) {
 		case "pc":
 			title = "내 PC";
-			mav.setViewName("/doc/folder.jsp");
+			mav.setViewName("/pc/pc.jsp");
 			break;
 		case "doc":
 			title = "내 문서";
-			mav.setViewName("/doc/folder.jsp");
+			mav.setViewName("/doc/doc.jsp");
 			break;
 		case "note":
 			title = "메모장";

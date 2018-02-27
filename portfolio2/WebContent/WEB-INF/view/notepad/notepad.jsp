@@ -5,7 +5,7 @@
 <div class="viewChange notepad" id="notePad" onclick="viewChange('notePad')">
 	<div class="title_wrap">
 		<div class="title">
-			<img src="/img/doc/title/notepad.png"/>
+			<img src="/img/notepad/title.png"/>
 			<div class="txt">¸Þ¸ðÀå</div>
 		</div>
 		<div class="btn_wrap">
