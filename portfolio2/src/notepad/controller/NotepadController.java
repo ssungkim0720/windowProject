@@ -38,10 +38,10 @@ public class NotepadController {
 	}
 	
 	// 저장
-	@RequestMapping("/saveNotepad/{category}/{title}/{content}")
+	@RequestMapping("/saveNotepad/{category}/{title}")
 	@ResponseBody
 	public boolean saveNotepad(@PathVariable(name="category")String category, @PathVariable(name="title")String title,
-			@PathVariable(name="content")String content, HttpSession session) {
+			@RequestParam(name="content")String content, HttpSession session) {
 		return ns.saveNotepad(category, title, content, session);
 	}
 	
@@ -66,10 +66,10 @@ public class NotepadController {
 	}
 	
 	// 수정 저장
-	@RequestMapping("/modifySave/{num}/{category}/{title}/{content}")
+	@RequestMapping("/modifySave/{num}/{category}/{title}")
 	@ResponseBody
 	public boolean modifySave(@PathVariable(name="num")String num, @PathVariable(name="category")String category,
-			@PathVariable(name="title")String title, @PathVariable(name="content")String content) {
+			@PathVariable(name="title")String title, @RequestParam(name="content")String content) {
 		return ns.modify(num, category, title, content);
 	}
 	

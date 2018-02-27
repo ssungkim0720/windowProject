@@ -449,11 +449,12 @@ function saveNotepad(){
 	if(modifyNotepadNum == 0){
 		$.ajax({
 			type : "post",
-			url : "/notepad/saveNotepad/"+category+"/"+title+"/"+content,
+			url : "/notepad/saveNotepad/"+category+"/"+title+"/?content="+content,
 			async : false,
 			success : function(b){
 				if(b){
 					alert("저장되었습니다.");
+					modifyNotepadNum = 0;
 					$.ajax({
 						type : "post",
 						url : "/notepad/writeCancel",
@@ -470,7 +471,7 @@ function saveNotepad(){
 	} else {
 		$.ajax({
 			type : "post",
-			url : "/notepad/modifySave/"+num+"/"+category+"/"+title+"/"+content,
+			url : "/notepad/modifySave/"+num+"/"+category+"/"+title+"?content="+content,
 			aysnc : false,
 			success : function(b){
 				if(b){
