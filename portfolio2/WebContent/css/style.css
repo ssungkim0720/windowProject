@@ -19,7 +19,7 @@ article { width: 100%; height: 100%; position: fixed; top: 0; left: 0; z-index: 
 footer { width: 100%; position: fixed; bottom: 0; z-index: 2; }
 ul { list-style: none; margin: 0; padding: 0; }
 li { display: inline-block; cursor: pointer; text-align: center; }
-textarea, input, select { font-family: 'nanumB'; font-size: 16px; }
+textarea, input, select { font-family: 'nanumB'; font-size: 16px; border: 1px solid #d1d1d1; outline: 0px; }
 form { display: initial; }
 a { text-decoration: none; }
 
@@ -52,7 +52,7 @@ a { text-decoration: none; }
 .icons .txt { width: 80px; font-size: 14px; color: white; text-align: center; padding: 1px 0; }
 
 .folder { width: 700px; height: 500px; position: absolute; top: 20%; left: 30%; transform: translate3d(-30%, -20%, 0); z-index: 3; background-color: white; border: 1px solid #d1d1d1; }
-.folder .menu_wrap { width: 100%; border-bottom: 1px solid #d1d1d1; }
+.folder .menu_wrap { border-bottom: 1px solid #d1d1d1; }
 .folder .menu_wrap .menu { width: 60px; display: inline-block; padding: 5px 0; font-size: 14px; text-align: center; cursor: default; }
 .folder .menu_wrap .menu:first-child { background-color: #0077ff; color: white; }
 .folder .menu_wrap .title { font-size: 14px; display: inline-block; padding: 5px 0; margin-left: 50px; }
@@ -74,6 +74,49 @@ a { text-decoration: none; }
 
 .folder .count_wrap { padding: 2px 0 2px 10px; }
 .folder .count_wrap .txt { font-size: 12px; }
+
+.notepad { width: 800px; position: absolute; top: 20%; left: 40%; transform: translate3d(-40%, -20%, 0); z-index: 3; background-color: white; border: 1px solid #d1d1d1; }
+.notepad .title_wrap .title { padding: 5px 10px; display: inline-block; cursor: default; }
+.notepad .title_wrap .title img { width: 20px; height: 20px; vertical-align: middle; }
+.notepad .title_wrap .title .txt { font-size: 14px; margin-left: 10px; display: inline-block; vertical-align: middle; }
+.notepad .title_wrap .btn_wrap { float: right; }
+.notepad .title_wrap .btn_wrap .btn { width: 50px; height: 31px; line-height: 2; display: inline-block; vertical-align: middle; text-align: center; font-size: 14px; cursor: default; color: #b1b1b1; }
+.notepad .title_wrap .btn_wrap .btn:hover { color: black; background-color: #ededed; }
+.notepad .title_wrap .btn_wrap .btn:last-child:hover { color: white; background-color: red; }
+.notepad .menu_wrap { border-bottom: 1px solid #d1d1d1; position: relative; }
+.notepad .menu_wrap .menu { width: 60px; display: inline-block; padding: 5px 0; font-size: 14px; text-align: center; cursor: default; }
+.notepad .menu_wrap .notepadMenu { width: 100px; position: absolute; top: 28px; left: 0; background-color: #e5e5e5; display: none; }
+.notepad .menu_wrap .notepadMenu .topMenu { font-size: 14px; padding: 10px 0 10px 10px; cursor: default; }
+.notepad .menu_wrap .notepadMenu .topMenu:hover { background-color: #77bbff; }
+.notepad .content_wrap { width: 800px; }
+.notepad .content_wrap .table .table_title { border-bottom: 1px solid #d1d1d1; }
+.notepad .content_wrap .table .table_title .title { width: 70px; display: inline-block; border-right: 1px solid #d1d1d1; text-align: center; font-size: 16px; padding: 10px 0; background-color: #fafafa; }
+.notepad .content_wrap .table .table_title .title:last-child { border-right: 0px; }
+.notepad .content_wrap .table .table_title .title2 { width: 150px; }
+.notepad .content_wrap .table .table_title .title3 { width: 276px; }
+.notepad .content_wrap .table .row { border-bottom: 1px solid #d1d1d1; }
+.notepad .content_wrap .table .row .cell { width: 70px; display: inline-block; border-right: 1px solid #d1d1d1; text-align: center; font-size: 14px; padding: 10px 0; }
+.notepad .content_wrap .table .row .cell:last-child { border-right: 0px; }
+.notepad .content_wrap .table .row .cell2 { width: 150px; }
+.notepad .content_wrap .table .row .cell3 { width: 276px; }
+.notepad .content_wrap .table .row .cell3 span { cursor: pointer; }
+.notepad .content_wrap .table .row .cell3 span:hover { color: #0077ff; }
+.notepad .content_wrap .search_wrap { margin: 20px 0; text-align: center; }
+.notepad .content_wrap .search_wrap select { width: 100px; padding: 5px; font-size: 14px; vertical-align: middle; }
+.notepad .content_wrap .search_wrap input { width: 200px; vertical-align: middle; font-size: 14px; padding: 5px; margin: 0 10px; }
+.notepad .content_wrap .search_wrap .btn { width: 80px; display: inline-block; vertical-align: middle; font-size: 14px; text-align: center; cursor: pointer; background-color: #fafafa; border: 1px solid #a0a0a0; padding: 5px 0; }
+.notepad .content_wrap .page_wrap { padding-bottom: 10px; text-align: center; }
+.notepad .content_wrap .page_wrap .page { width: 50px; display: inline-block; margin-right: 10px; text-align: center; font-size: 14px; cursor: pointer; background-color: #fafafa; border: 1px solid #f0f0f0; padding: 5px 0; }
+.notepad .content_wrap .page_wrap .sel { background-color: #a0a0a0; border: 1px solid #fafafa; }
+.notepad .content_wrap .write_wrap .row { border-bottom: 1px solid #d1d1d1; }
+.notepad .content_wrap .write_wrap .row .title { width: 100px; display: inline-block; padding: 10px 0; font-size: 14px; text-align: center; vertical-align: middle; }
+.notepad .content_wrap .write_wrap .row .input { width: 689px; display: inline-block; vertical-align: middle; border-left: 1px solid #d1d1d1; padding: 5px; }
+.notepad .content_wrap .write_wrap .row .input select { width: 100px; padding: 5px; font-size: 14px; }
+.notepad .content_wrap .write_wrap .row .input input { width: 100%; font-size: 14px; border: 0px; }
+.notepad .content_wrap .write_wrap .row .input textarea { width: 100%; height: 300px; font-size: 14px; resize: none; border: 0px; }
+.notepad .content_wrap .btn_wrap { margin: 10px 0; text-align: center; }
+.notepad .content_wrap .btn_wrap .btn { width: 80px; display: inline-block; text-align: center; font-size: 14px; cursor: pointer; background-color: #0077ff; color: white; border: 1px solid #a0a0a0; padding: 5px 0; margin-right: 10px; }
+.notepad .content_wrap .btn_wrap .btn:last-child { margin-right: 0; background-color: #fafafa; color: black; }
 
 
 

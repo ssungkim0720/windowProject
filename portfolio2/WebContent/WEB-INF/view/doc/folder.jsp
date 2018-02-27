@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<div class="folder" id="${folderName }Folder">
+<div class="viewChange folder" id="${folderName }Folder" onclick="viewChange('${folderName }Folder')">
 	<div class="menu_wrap">
 		<div class="menu sel" onclick="folderMenuClick('file')" id="folderMenu_file">파일</div>
 		<div class="menu" onmouseenter="folderMenu('view')" onmouseleave="folderMenu2('view')"

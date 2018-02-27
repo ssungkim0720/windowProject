@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="notepad">
+	<insert id="save" parameterType="java.util.HashMap">
+		insert into notepad(category, title, content, writer, day)
+		values(#{category}, #{title}, #{content}, #{writer}, #{day})
+	</insert>
+	<select id="list" resultType="java.util.HashMap">
+		select * from notepad order by auto desc limit 10 offset #{page}
+	</select>
+	<select id="count" resultType="java.lang.Integer">
+		select count(*) from notepad
+	</select>
+	<select id="view" resultType="java.util.HashMap">
+		select * from notepad where auto = #{num}
+	</select>
+	<update id="modify" parameterType="java.util.HashMap">
+		update notepad set category = #{category}, title = #{title}, content = #{content} where auto = #{num}
+	</update>
+	<delete id="remove">
+		delete from notepad where auto = #{num}
+	</delete>
+</mapper>

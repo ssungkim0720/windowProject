@@ -19,6 +19,11 @@
 			<div class="shortBack" id="shortBack2"></div>
 			<div class="footerLine" id="footerLine2"></div>
 		</div>
+		<div class="icon" onmouseenter="shortCut(3)" onmouseleave="shortCut2(3)" onclick="shortCutClick(3)">
+			<img src="/img/main/notepad.png"/>
+			<div class="shortBack" id="shortBack3"></div>
+			<div class="footerLine" id="footerLine3"></div>
+		</div>
 	</div>
 	<div class="shortCut timeBar">
 		<div class="icon icon2" onmouseenter="shortCut(10)" onmouseleave="shortCut2(10)" onclick="langChange()">
