@@ -141,7 +141,7 @@ function iconNumCheck(name){
 	case "doc":
 		n = 1;
 		break;
-	case "note":
+	case "notePad":
 		n = 2;
 		break;
 	}
