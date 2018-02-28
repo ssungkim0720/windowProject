@@ -40,7 +40,7 @@ public class MainController {
 			title = "내 문서";
 			mav.setViewName("/doc/doc.jsp");
 			break;
-		case "note":
+		case "notePad":
 			title = "메모장";
 			mav.setViewName("/notepad/notepad.jsp");
 			List<HashMap> notepadList = ns.notepadList(1);

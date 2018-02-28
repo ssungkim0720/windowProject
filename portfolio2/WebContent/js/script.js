@@ -34,65 +34,63 @@ function shortCut2(num){
 // 시작메뉴 아이콘 클릭
 var shortCutIcon = new Array(0, 0, 0, 0);
 function shortCutClick(num){
-	$(".viewChange").css({
-		"z-index" : 3
-	});
-	var b = false;
-	switch(name){
-	case "pc":
-		b = pcView == 0 ? true : false;
+	var name = "";
+	switch(num){
+	case 1:
+		name = "pc";
 		break;
-	case "doc":
-		b = docView == 0 ? true : false;
+	case 2:
+		name = "doc";
 		break;
-	case "note":
-		b = noteView == 0 ? true : false;
+	case 3:
+		name = "notePad";
+		break;
 	}
-	if(b){
-		$.ajax({
-			type : "post",
-			url : "/folder/"+name,
-			async : false,
-			success : function(html){
-				$("article").append(html);
-				var num = 0;
-				switch(name){
-				case "pc":
-					num = 1;
-					pcView = 1;
-					break;
-				case "doc":
-					num = 2;
-					docView = 1;
-					break;
-				case "note":
-					num = 3;
-					noteView = 1;
-					break;
-				}
-				if(shortCutIcon[num] == 0){
-					$("#footerLine"+num).show();
-					shortCutIcon[num] == 1;
-				}
-			}
-		});
-	} else {
-		viewChange(name);
-	}
-//	if(shortCutIcon[num] == 0){
-//		$("#footerLine"+num).show();
-//		shortCutIcon[num] == 1;
-//		switch(num){
-//		case 1:
-//			icondbClick("pc");
-//			break;
-//		case 2:
-//			icondbClick("doc");
-//			break;
-//		case 3:
-//			icondbClick("note");
-//			break;
-//		}
+	icondbClick(name);
+//	$(".viewChange").css({
+//		"z-index" : 3
+//	});
+//	var b = false;
+//	switch(name){
+//	case "pc":
+//		b = pcView == 0 ? true : false;
+//		break;
+//	case "doc":
+//		b = docView == 0 ? true : false;
+//		break;
+//	case "note":
+//		b = noteView == 0 ? true : false;
+//	}
+//	if(b){
+//		$.ajax({
+//			type : "post",
+//			url : "/folder/"+name,
+//			async : false,
+//			success : function(html){
+//				$("article").append(html);
+//				var num = 0;
+//				switch(name){
+//				case "pc":
+//					num = 1;
+//					pcView = 1;
+//					break;
+//				case "doc":
+//					num = 2;
+//					docView = 1;
+//					break;
+//				case "note":
+//					num = 3;
+//					noteView = 1;
+//					break;
+//				}
+//				if(shortCutIcon[num] == 0){
+//					$("#footerLine"+num).show();
+//					shortCutIcon[num] == 1;
+//				}
+//			}
+//		});
+//	} else {
+//		viewChange(name);
 //	}
 }
 
@@ -205,7 +203,7 @@ function icondbClick(name){
 	case "doc":
 		b = docView == 0 ? true : false;
 		break;
-	case "note":
+	case "notePad":
 		b = noteView == 0 ? true : false;
 	}
 	if(b){
@@ -225,7 +223,7 @@ function icondbClick(name){
 					num = 2;
 					docView = 1;
 					break;
-				case "note":
+				case "notePad":
 					num = 3;
 					noteView = 1;
 					break;

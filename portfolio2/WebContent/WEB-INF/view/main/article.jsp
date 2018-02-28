@@ -16,7 +16,7 @@
 	</div>
 	<div class="txt">내 문서</div>
 </div>
-<div class="icons" onmouseenter="icon('note')" onmouseleave="icon2('note')" onclick="iconClick('note')" ondblclick="icondbClick('note')">
+<div class="icons" onmouseenter="icon('notePad')" onmouseleave="icon2('notePad')" onclick="iconClick('notePad')" ondblclick="icondbClick('notePad')">
 	<div class="iconsBack" id="noteBack"></div>
 	<div class="img">
 		<img src="/img/main/notepad.png"/>
